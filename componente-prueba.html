@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="bower_components/mp-calendar/mp-calendar.html">
+<link rel="import" href="bower_components/mp-video/mp-video.html">
+
+<dom-module id="componente-prueba">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <mp-calendar day-labels='["Su","Mo","Tu","We","Th","Fr","Sa"]'
+             disable-prev-days
+             show-days-in-month=42
+             disabled-dates="[8, 17, 29]"
+             disabled-days='["Tu"]'
+             disabled-weeks="[5]"
+             events-file=demo/events.json>
+             
+</mp-calendar>
+
+<mp-video youtube
+          video-id="8-Zq2KUN6jM"
+          video-volume="60"
+          video-autoplay="0">
+</mp-video>
+<mp-video vimeo
+          video-id="78323839"
+          video-autoplay="0"
+          video-volume="0.5">
+</mp-video>
+<mp-video html-video
+          video-controls
+          video-preload="auto"
+          video-volume="0.5"
+          video-thumnail="https://www.html5rocks.com/en/tutorials/video/basics/poster.png"
+          html-video-mp4="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4"
+          html-video-webm="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm">
+</mp-video>
+
+  </template>
+
+  <script>
+    /**
+     * `componente-prueba`
+     * prueba1
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ComponentePrueba extends Polymer.Element {
+      static get is() { return 'componente-prueba'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Prueba 1'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ComponentePrueba.is, ComponentePrueba);
+  </script>
+</dom-module>
